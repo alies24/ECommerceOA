@@ -5,17 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceOA.Persistence.Configurations
+namespace ECommerceOA.Persistence
 {
     public static class Configuration
     {
-        public static string ConfigurationVerification(string connectionString = "PostgreSQL")
+       
+        public static string VerifyJson()
         {
+            string connectionString = "PostgreSQL";
             ConfigurationManager configurationManager = new();
-            configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../Presentation/ECommerceOA.WebAPI"));
-            configurationManager.AddJsonFile("appsetting.json");
+            configurationManager.SetBasePath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../Presentation/ECommerceOA.WebAPI"));
+            configurationManager.AddJsonFile("appsettings.json");
             return configurationManager.GetConnectionString(connectionString);
-            
         }
     }
 }

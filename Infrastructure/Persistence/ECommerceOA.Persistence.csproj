@@ -27,8 +27,4 @@
     <ProjectReference Include="..\..\Core\ECommerce-OA.Application\ECommerceOA.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Concrete\" />
-  </ItemGroup>
-
 </Project>

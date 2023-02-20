@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce_OA.Application.Abstract
+namespace ECommerce_OA.Application.Repositories.CustomerRepository
 {
-    public interface IProductService
+    public interface ICustomerWriteRepository:IWriteRepository<Customer>
     {
-        List<Product> GetProducts();
     }
 }
