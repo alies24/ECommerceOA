@@ -40,7 +40,7 @@ namespace ECommerceOA.Persistence.Repositories
             {
                 result = result.AsNoTracking();
             }
-            return await result.FirstOrDefaultAsync(i => i.Id == id);
+            return await result.FirstAsync(i => i.Id == id);
            
         } 
         public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)

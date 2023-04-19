@@ -20,6 +20,7 @@ namespace ECommerceOA.Persistence.Repositories
         {
             var result = await Table.AddAsync(entity);
             return result.State == EntityState.Added;
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<bool> AddRangeAsync(List<T> entities)
@@ -54,7 +55,7 @@ namespace ECommerceOA.Persistence.Repositories
         public async Task<int> SaveAsync()
         {
             
-            return await _dbContext.SaveChangesAsync();
+           return await _dbContext.SaveChangesAsync();
         }
 
         public bool Update(T entity)

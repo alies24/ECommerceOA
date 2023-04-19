@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ECommerceOA.Persistence.Migrations
 {
     [DbContext(typeof(ECommerceOADbContext))]
-    [Migration("20230211161103_mig_1")]
-    partial class mig1
+    [Migration("20230221171403_mig2")]
+    partial class mig2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,9 @@ namespace ECommerceOA.Persistence.Migrations
                     b.Property<string>("CustomerName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -67,6 +70,9 @@ namespace ECommerceOA.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("UpdatedTime")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
@@ -89,11 +95,14 @@ namespace ECommerceOA.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("numeric");
+                    b.Property<float>("UnitPrice")
+                        .HasColumnType("real");
 
                     b.Property<int>("UnitsInStock")
                         .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedTime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 

@@ -1,18 +1,17 @@
-﻿using ECommerce_OA.Domain.Entities.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce_OA.Domain.Entities.Concrete
+namespace ECommerce_OA.Application.ViewModels.Products
 {
-    public class Product:CommonEntity
+    public class VM_UpdateProduct
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public float UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
+        public float UnitPrice { get; set; }
         public string Description { get; set; }
-        public ICollection<Order> Orders { get; set; }
     }
 }

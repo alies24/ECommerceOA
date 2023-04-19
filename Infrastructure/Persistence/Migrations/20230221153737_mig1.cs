@@ -32,7 +32,7 @@ namespace ECommerceOA.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    UnitPrice = table.Column<decimal>(type: "numeric", nullable: false),
+                    UnitPrice = table.Column<float>(type: "real", nullable: false),
                     UnitsInStock = table.Column<int>(type: "integer", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
